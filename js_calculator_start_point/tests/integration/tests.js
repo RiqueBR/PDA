@@ -103,7 +103,7 @@ describe('calculator functionality', function() {
     expect(runningTotal.getAttribute('value')).to.eventually.equal('170953875');
   })
 
-  it('should divide by zero and return infinity', function(){
+  it('should divide by zero and return undefined', function(){
     runningTotal = element(by.css('#running_total'));
 
     element(by.css('#number2')).click();
@@ -112,7 +112,8 @@ describe('calculator functionality', function() {
 
     element(by.css('#operator_equals')).click();
 
-    expect(runningTotal.getAttribute('value')).to.eventually.equal('Infinity');
+    // here...
+    expect(runningTotal.getAttribute('value')).to.eventually.equal('undefined');
   })
 
 });

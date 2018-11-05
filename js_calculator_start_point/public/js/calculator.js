@@ -64,9 +64,16 @@ Calculator.prototype.operatorClick = function(operator){
   } else {
     this.previousOperator = operator;
   }
+
+  // if a number is divided by 0 and the operator click is fired, feedback the
+  // result as undefined
+  if (operator == '=' && this.runningTotal == 'Infinity'){
+    this.runningTotal = 'undefined'
+  }
+
+
   // replace the previous total with the current running total and flag that a
   // new total has been calculated
-
   this.previousTotal = this.runningTotal;
   this.newTotal = true;
 }

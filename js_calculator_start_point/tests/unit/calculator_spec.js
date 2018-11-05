@@ -48,9 +48,11 @@ describe('calculator', function () {
     calculator.numberClick(4);
     calculator.operatorClick('*');
     calculator.numberClick(5);
+    calculator.operatorClick('+');
+    calculator.numberClick(10);
     calculator.operatorClick('=');
 
-    assert.strictEqual(calculator.runningTotal, 20)
+    assert.strictEqual(calculator.runningTotal, 30)
   })
 
   it('clear the running total without affecting the calculation', function(){
